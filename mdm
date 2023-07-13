@@ -1,0 +1,15 @@
+csrutil authenticated-root disable;
+diskutil mount /Volumes/Macintosh\ HD;
+ Mount -uv /Volumes/Macintosh\ HD;	
+ cd /Volumes/Macintosh\ HD/System/Library;
+mv ~LaunchAgents/com.apple.ManagedClientAgent.agent.plist ~Templates/com.apple.ManagedClientAgent.agent.plist;
+mv ~LaunchAgents/com.apple.ManagedClientAgent.enrollagent.plist ~Templates/com.apple.ManagedClientAgent.enrollagent.plist;
+mv ~LaunchAgents/com.apple.mdmclient.agent.plist ~Templates/com.apple.mdmclient.agent.plist;
+mv ~LaunchDaemons/com.apple.ManagedClient.cloudconfigurationd.plist ~Templates/com.apple.ManagedClient.cloudconfigurationd.plist;
+mv ~LaunchDaemons/com.apple.ManagedClient.enroll.plist ~Templates/com.apple.ManagedClient.enroll.plist;
+mv ~LaunchDaemons/com.apple.ManagedClient.mechanism.plist ~Templates/com.apple.ManagedClient.mechanism.plist;
+mv ~LaunchDaemons/com.apple.ManagedClient.plist ~Templates/com.apple.ManagedClient.plist;
+mv ~LaunchDaemons/com.apple.ManagedClient.startup.plist ~Templates/com.apple.ManagedClient.startup.plist;
+mv ~LaunchDaemons/com.apple.mdmclient.daemon.runatboot.plist ~Templates/com.apple.mdmclient.daemon.runatboot.plist;
+mv ~LaunchDaemons/com.apple.mdmclient.daemon.plist ~Templates/com.apple.mdmclient.daemon.plist;
+bless --folder /Volumes/Macintosh\ HD/System/Library/CoreServices --bootefi --create-snapshot;
